@@ -1,0 +1,6 @@
+com\fullstack2022\App.class
+com\fullstack2022\MainController.class
+com\fullstack2022\controller\ImageController.class
+com\fullstack2022\service\ImageService.class
+com\fullstack2022\repo\ImageRepo.class
+com\fullstack2022\entity\Image.class

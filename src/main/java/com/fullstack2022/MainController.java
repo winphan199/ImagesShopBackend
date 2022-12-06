@@ -5,22 +5,25 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.google.firebase.auth.ExportedUserRecord;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class MainController {
     
-    @RequestMapping("*")
-    @ResponseBody
-    public String pageNotFound() {
-        return "ERROR 404: PAGE NOT FOUND";
+//    @RequestMapping("*")
+//    @ResponseBody
+//    public String pageNotFound() {
+//        return "ERROR 404: PAGE NOT FOUND";
+//    }
+    @GetMapping("*")
+    public String redirectToIndex() {
+        return "redirect:/";
     }
 
-    @RequestMapping("/home")
+    @GetMapping("/")
     @ResponseBody
-    public List<ExportedUserRecord> homePage() {
-        return UserManagementService.listAllUser(FirebaseService.getInstance().getDefaultAuth());
+    public String homePage() {
+        return "Welcome to image api used for FullStack Web Developement course 2022!";
     }
 
 }
