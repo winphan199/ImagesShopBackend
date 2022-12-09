@@ -1,4 +1,4 @@
-package com.fullstack2022;
+package com.fullstack2022.controller;
 
 import java.util.List;
 
