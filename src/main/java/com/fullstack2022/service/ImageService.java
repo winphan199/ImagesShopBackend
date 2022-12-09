@@ -13,7 +13,6 @@ public class ImageService {
     private ImageRepo imageRepo;
     
     public List<Image> getImages() {
-        
         return this.imageRepo.findAll();
     }
     
