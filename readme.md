@@ -5,7 +5,7 @@ This is rest api used for ImageShop project for Fullstack Web Application Course
 ## Installation
 
 ```
-mvn install && java -jar /target/backend-0.0.1-SNAPSHOT.jar
+mvn install && java -jar target/backend-0.0.1-SNAPSHOT.jar
 ```
 
 ## Usage
