@@ -25,11 +25,11 @@ public class User {
 	@Size(max = 20)
 	private String username;
 
-	@NotBlank
+	// @NotBlank
 	@Size(max = 20)
 	private String firstName;
 
-	@NotBlank
+	// @NotBlank
 	@Size(max = 20)
 	private String lastName;
 
