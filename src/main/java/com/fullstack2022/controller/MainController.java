@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MainController {
     
-//    @RequestMapping("*")
-//    @ResponseBody
-//    public String pageNotFound() {
-//        return "ERROR 404: PAGE NOT FOUND";
-//    }
+    @RequestMapping("*")
+    @ResponseBody
+    public String pageNotFound() {
+        return "ERROR 404: PAGE NOT FOUND";
+    }
     // @GetMapping("*")
     // public String redirectToIndex() {
     //     return "redirect:/";
