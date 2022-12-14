@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api")
 public class ImageController {
@@ -35,7 +36,6 @@ public class ImageController {
         return list.isPresent()?(this.imageService.getImagesByTagList(list.get())):this.imageService.getImages();
     }
     
-    @CrossOrigin(origins = "*")
     @PostMapping("/images")
     @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
     public Image addImage(@RequestBody Image newImage) {
