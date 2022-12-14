@@ -15,6 +15,10 @@ public class ImageService {
     public List<Image> getImages() {
         return this.imageRepo.findAll();
     }
+
+    public List<Image> getImagesByTag(String tag) {
+        return this.imageRepo.findByTag(tag);
+    }
     
     public Image addImage(Image newImage) {
         return imageRepo.save(newImage);
