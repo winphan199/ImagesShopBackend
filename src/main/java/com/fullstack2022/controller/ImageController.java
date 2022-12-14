@@ -30,7 +30,9 @@ public class ImageController {
 
     @GetMapping("/images")
     public List<Image> getImagesByTag(@RequestParam(value="tag") Optional<List<String>> list) {
-        return Optional.ofNullable(this.imageService.getImagesByTagList(list.get())).orElseGet(() ->this.imageService.getImages());
+        System.out.println(list.isPresent());
+        System.out.println(list);
+        return list.isPresent()?(this.imageService.getImagesByTagList(list.get())):this.imageService.getImages();
     }
     
     @CrossOrigin(origins = "*")
