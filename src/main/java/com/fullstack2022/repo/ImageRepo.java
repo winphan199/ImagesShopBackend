@@ -9,5 +9,5 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ImageRepo extends JpaRepository<Image, Long> {
-    List<Image> findByTag(Optional<String> tag);
+    List<Image> findByTag(String tag);
 }
