@@ -23,11 +23,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 public class ImageController {
     @Autowired
     private ImageService imageService;
-    
-    // @GetMapping("/images")
-    // public List<Image> getImages() {
-    //     return this.imageService.getImages();
-    // }
 
     @GetMapping("")
     public List<Image> getImagesByTag(@RequestParam(value="tag") Optional<List<String>> list) {
