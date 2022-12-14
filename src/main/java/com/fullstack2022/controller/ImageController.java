@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/images")
 public class ImageController {
     @Autowired
     private ImageService imageService;
@@ -29,14 +29,14 @@ public class ImageController {
     //     return this.imageService.getImages();
     // }
 
-    @GetMapping("/images")
+    @GetMapping("")
     public List<Image> getImagesByTag(@RequestParam(value="tag") Optional<List<String>> list) {
         System.out.println(list.isPresent());
         System.out.println(list);
         return list.isPresent()?(this.imageService.getImagesByTagList(list.get())):this.imageService.getImages();
     }
     
-    @PostMapping("/images")
+    @PostMapping("")
     @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
     public Image addImage(@RequestBody Image newImage) {
         
