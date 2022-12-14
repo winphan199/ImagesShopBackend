@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 
 @RestController
@@ -24,6 +25,7 @@ public class ImageController {
         return this.imageService.getImages();
     }
     
+    @CrossOrigin(origins = "*")
     @PostMapping("/images")
     @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
     public Image addImage(@RequestBody Image newImage) {
