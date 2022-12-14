@@ -4,6 +4,8 @@ package com.fullstack2022.service;
 import com.fullstack2022.entity.Image;
 import com.fullstack2022.repo.ImageRepo;
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +18,7 @@ public class ImageService {
         return this.imageRepo.findAll();
     }
 
-    public List<Image> getImagesByTag(String tag) {
+    public List<Image> getImagesByTag(Optional<String> tag) {
         return this.imageRepo.findByTag(tag);
     }
     

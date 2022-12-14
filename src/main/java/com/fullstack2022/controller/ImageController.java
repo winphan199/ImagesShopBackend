@@ -4,6 +4,8 @@ package com.fullstack2022.controller;
 import com.fullstack2022.entity.Image;
 import com.fullstack2022.service.ImageService;
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,8 +29,8 @@ public class ImageController {
     // }
 
     @GetMapping("/images")
-    public List<Image> getImagesByTag(@RequestParam String tag) {
-        return this.imageService.getImagesByTag(tag);
+    public List<Image> getImagesByTag(@RequestParam Optional<String> tag) {
+        return tag.isPresent()?this.imageService.getImagesByTag(tag):this.imageService.getImages();
     }
     
     @CrossOrigin(origins = "*")
