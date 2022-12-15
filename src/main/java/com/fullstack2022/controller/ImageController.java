@@ -37,5 +37,4 @@ public class ImageController {
         
         return imageService.addImage(newImage);
     }
-
 }
