@@ -9,7 +9,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class JwtResponse {
   private final String type = "Bearer";
-
   private final String token;
   private final Long id;
   private final String username;
